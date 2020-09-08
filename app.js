@@ -1,11 +1,12 @@
-const express = require('express');
-const router = require('./routes/index');
+import express from 'express';
+import router from './api/routes/index';
 const cors = require('cors');
+const passportSetup = require('./api/config/passport-setup');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
-const path = require('path');
 
-const db = require('./config/database');
+
+const db = require('./api/config/database');
 db.authenticate()
     .then(() => console.log('Database is connected...'))
     .catch((err) => console.log(err));
