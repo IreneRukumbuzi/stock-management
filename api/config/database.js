@@ -1,5 +1,7 @@
 const Sequelize = require('sequelize');
-module.exports = new Sequelize('stock-mgt', 'postgres', 'Umutekano', {
+const keys = require('./keys');
+
+module.exports = new Sequelize(keys.db.name, keys.db.userName, keys.db.password, {
     host: 'localhost',
     dialect: 'postgres',
 
