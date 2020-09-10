@@ -1,5 +1,5 @@
 const passport = require('passport');
-const db = require('../config/database');
+// const db = require('../config/database');
 
 exports.landing = (req, res) => {
     res.send('Hello');
@@ -21,9 +21,4 @@ exports.redirect = (req, res) => {
     res.send('Logged in successfully');
 }
 
-exports.getProducts = (req, res) => {
-    Product.findAll()
-        .then((products) => console.log(products))
-        .catch(err => console.log(err));
-}
 
