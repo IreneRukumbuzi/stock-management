@@ -1,4 +1,4 @@
-const Product = require("../models").Product;
+import { Product } from "../models";
 
 exports.getProducts = (req, res) => {
   return Product.findAll()
