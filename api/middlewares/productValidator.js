@@ -5,7 +5,7 @@ const schema = Joi.object({
   price: Joi.number().required(),
   description: Joi.string().required()
 });
-const validateProduct = async (req, res, next) => {
+export const validateProduct = async (req, res, next) => {
   try {
     const value = await schema.validateAsync(req.body);
     if (value) next();
@@ -13,4 +13,3 @@ const validateProduct = async (req, res, next) => {
     res.send({ error: err.details[0].message });
   }
 };
-export default validateProduct;
